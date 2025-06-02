@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IzzNyx Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #fff;
+      background-color: #ffffff;
       color: #333;
+      line-height: 1.6;
     }
     header {
       background: #000;
@@ -20,883 +19,113 @@
       padding: 1rem;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
+    header img {
+      height: 80px;
+      display: block;
+      margin: 0 auto 10px;
     }
-    section.gallery {
+    section {
       padding: 2rem;
-      background-color: #f5f5f5;
     }
-    .gallery h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
+    .services, .contact {
+      background-color: #f9f9f9;
+      border-top: 1px solid #ddd;
     }
-    .gallery-grid {
+    .service-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
+      gap: 1rem;
     }
-    .gallery-grid img {
-      width: 200px;
-      height: auto;
+    .service-item {
+      flex: 1 1 200px;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
     }
     footer {
       background: #000;
       color: #fff;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
     }
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50%;
-      font-size: 24px;
-      text-decoration: none;
-      box-shadow: 0 0 10px #999;
+    .arabic {
+      font-family: 'Segoe UI', sans-serif;
+      direction: rtl;
+      text-align: right;
     }
-    .insta-link {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .insta-link a {
-      font-size: 20px;
-      color: #125688;
-      text-decoration: none;
-    }
-  
-/* Dark theme toggle button */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 20px;
-  cursor: pointer;
-  z-index: 1000;
-}
-body.dark {
-  background-color: #111;
-  color: #eee;
-}
-body.dark header,
-body.dark footer {
-  background-color: #222;
-  color: #eee;
-}
-body.dark .gallery {
-  background-color: #1c1c1c;
-}
-
-
-.testimonials {
-  background: #e8f4ff;
-  padding: 2rem;
-  text-align: center;
-}
-.testimonials blockquote {
-  font-style: italic;
-  border-left: 4px solid #3498db;
-  margin: 1rem auto;
-  max-width: 600px;
-}
-.testimonials footer {
-  margin-top: 0.5rem;
-  font-weight: bold;
-}
-.contact {
-  background: #f0f0f0;
-  padding: 2rem;
-  text-align: center;
-}
-.contact input, .contact textarea {
-  width: 90%;
-  max-width: 400px;
-  margin: 0.5rem 0;
-  padding: 10px;
-}
-.contact button {
-  background: #000;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background: #f9f9f9;
-  }
-  nav a:hover {
-    text-decoration: underline;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 5px;
-    border-radius: 5px;
-  }
-  .services-ar ul li, .contact input, .contact textarea {
-    transition: all 0.3s ease-in-out;
-  }
-  .services-ar ul li:hover {
-    color: #0077cc;
-    font-weight: bold;
-    transform: scale(1.02);
-  }
-  @media (max-width: 768px) {
-    header img {
-      width: 80px;
-    }
-    nav a {
-      display: block;
-      margin: 10px 0;
-    }
-    .gallery img {
-      width: 100%;
-      max-width: 90vw;
-    }
-  }
-  .whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 12px 16px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 24px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    text-decoration: none;
-    z-index: 1000;
-  }
-  .newsletter {
-    background: #0077cc;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 2rem;
-  }
-  .newsletter input[type="email"] {
-    padding: 10px;
-    width: 60%;
-    max-width: 300px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-  }
-  .newsletter button {
-    background: #fff;
-    color: #0077cc;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-<style>
-.slider-container {
-  position: relative;
-  max-width: 800px;
-  margin: 2rem auto;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.slider-container img {
-  width: 100%;
-  display: none;
-  animation: fade 1.5s;
-}
-.slider-container img.active {
-  display: block;
-}
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-.video-section {
-  text-align: center;
-  padding: 2rem;
-}
-.video-section iframe {
-  max-width: 90%;
-  height: 400px;
-  border-radius: 10px;
-  border: none;
-}
-
-<style>
-  header {
-    background: #0077cc;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  nav {
-    text-align: center;
-  }
-  nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-  }
-  .dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 180px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1001;
-    text-align: left;
-  }
-  .dropdown-content a {
-    color: #0077cc;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    font-weight: normal;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-<style>
-  body {
-    background: linear-gradient(to right, #e0f7fa, #fce4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  header {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  nav a {
-    font-size: 16px;
-  }
-  h1, h2 {
-    color: #006064;
-  }
-  button, input[type="submit"] {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover, input[type="submit"]:hover {
-    background: #0288d1;
-  }
-</style>
-</style>
-
-<style>
-  body {
-    background: linear-gradient(to right, #e0f7fa, #fce4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  header {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  nav a {
-    font-size: 16px;
-  }
-  h1, h2 {
-    color: #006064;
-  }
-  button, input[type="submit"] {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover, input[type="submit"]:hover {
-    background: #0288d1;
-  }
-</style>
-</style>
-<script>
-let slideIndex = 0;
-function showSlides() {
-  const slides = document.querySelectorAll('.slider-container img');
-  slides.forEach((img, i) => img.classList.remove('active'));
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].classList.add('active');
-}
-setInterval(showSlides, 3000);
-window.onload = () => showSlides();
-</script>
-
-
-<style>
-  header {
-    background: #0077cc;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  nav {
-    text-align: center;
-  }
-  nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-  }
-  .dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 180px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1001;
-    text-align: left;
-  }
-  .dropdown-content a {
-    color: #0077cc;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    font-weight: normal;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-<style>
-  body {
-    background: linear-gradient(to right, #e0f7fa, #fce4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  header {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  nav a {
-    font-size: 16px;
-  }
-  h1, h2 {
-    color: #006064;
-  }
-  button, input[type="submit"] {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover, input[type="submit"]:hover {
-    background: #0288d1;
-  }
-</style>
-</style>
-
-<style>
-  body {
-    background: linear-gradient(to right, #e0f7fa, #fce4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  header {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  nav a {
-    font-size: 16px;
-  }
-  h1, h2 {
-    color: #006064;
-  }
-  button, input[type="submit"] {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover, input[type="submit"]:hover {
-    background: #0288d1;
-  }
-</style>
-</style>
-
-
-<style>
-.slider-container {
-  position: relative;
-  max-width: 800px;
-  margin: 2rem auto;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.slider-container img {
-  width: 100%;
-  display: none;
-  animation: fade 1.5s;
-}
-.slider-container img.active {
-  display: block;
-}
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-.video-section {
-  text-align: center;
-  padding: 2rem;
-}
-.video-section iframe {
-  max-width: 90%;
-  height: 400px;
-  border-radius: 10px;
-  border: none;
-}
-
-<style>
-  header {
-    background: #0077cc;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  nav {
-    text-align: center;
-  }
-  nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-  }
-  .dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 180px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1001;
-    text-align: left;
-  }
-  .dropdown-content a {
-    color: #0077cc;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    font-weight: normal;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-<style>
-  body {
-    background: linear-gradient(to right, #e0f7fa, #fce4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  header {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  nav a {
-    font-size: 16px;
-  }
-  h1, h2 {
-    color: #006064;
-  }
-  button, input[type="submit"] {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover, input[type="submit"]:hover {
-    background: #0288d1;
-  }
-</style>
-</style>
-
-<style>
-  body {
-    background: linear-gradient(to right, #e0f7fa, #fce4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  header {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  nav a {
-    font-size: 16px;
-  }
-  h1, h2 {
-    color: #006064;
-  }
-  button, input[type="submit"] {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover, input[type="submit"]:hover {
-    background: #0288d1;
-  }
-</style>
-</style>
-<script>
-let slideIndex = 0;
-function showSlides() {
-  const slides = document.querySelectorAll('.slider-container img');
-  slides.forEach((img, i) => img.classList.remove('active'));
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].classList.add('active');
-}
-setInterval(showSlides, 3000);
-window.onload = () => showSlides();
-</script>
-
-
-<style>
-  header {
-    background: #0077cc;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  nav {
-    text-align: center;
-  }
-  nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-  }
-  .dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 180px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1001;
-    text-align: left;
-  }
-  .dropdown-content a {
-    color: #0077cc;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    font-weight: normal;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-<style>
-  body {
-    background: linear-gradient(to right, #e0f7fa, #fce4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  header {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  nav a {
-    font-size: 16px;
-  }
-  h1, h2 {
-    color: #006064;
-  }
-  button, input[type="submit"] {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover, input[type="submit"]:hover {
-    background: #0288d1;
-  }
-</style>
-</style>
-
-<style>
-  body {
-    background: linear-gradient(to right, #e0f7fa, #fce4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  header {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  nav a {
-    font-size: 16px;
-  }
-  h1, h2 {
-    color: #006064;
-  }
-  button, input[type="submit"] {
-    background: linear-gradient(to right, #0077cc, #00bcd4);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover, input[type="submit"]:hover {
-    background: #0288d1;
-  }
-</style>
-</style>
-
-<script>
-  function toggleTheme() {
-    document.body.classList.toggle("dark");
-    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-  }
-  window.onload = () => {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
-    }
-  };
-</script>
-
+  </style>
 </head>
-
 <body>
+  <header>
+    <img src="IMG-20250531-WA0002.jpg" alt="IzzNyx Logo" />
+    <h1>IzzNyx Solutions</h1>
+    <p>Training | Design | Coding | Tech Support</p>
+  </header>
 
-<header style="background: #0077cc; padding: 1rem 0; text-align: center;">
-  <nav>
-    <a href="index.html" style="margin: 0 15px; color: white; text-decoration: none; font-weight: bold;">Home</a>
-    <a href="gallery.html" style="margin: 0 15px; color: white; text-decoration: none; font-weight: bold;">Gallery</a>
-    <a href="testimonials.html" style="margin: 0 15px; color: white; text-decoration: none; font-weight: bold;">Testimonials</a>
-  </nav>
-</header>
+  <section class="about">
+    <h2>About Us / معلومات عنا</h2>
+    <p>
+      Welcome to IzzNyx Solutions, founded by Safna M Usman. We specialize in professional digital services such as logo design, CV creation, website development, and more. Based in Bahrain, we serve clients globally through online platforms.
+    </p>
+    <p class="arabic">
+      مرحبًا بكم في IzzNyx Solutions، تأسست بواسطة صفنا م. عثمان. نحن متخصصون في الخدمات الرقمية الاحترافية مثل تصميم الشعارات، وإنشاء السيرة الذاتية، وتطوير المواقع، والمزيد. مقرنا البحرين ونخدم العملاء عالميًا عبر الإنترنت.
+    </p>
+  </section>
 
-<header style="text-align:center; padding: 1rem; background:#000; color:#fff;">
-  <img src="IMG-20250531-WA0002.jpg" alt="IzzNyx Logo" style="width:120px; height:auto; margin-bottom:10px;">
-  <h1 style="margin:0; font-size:2em;">IzzNyx Solutions</h1>
-  <p style="margin:0; font-size:1.2em;">Creative Design & Digital Services</p>
-</header>
-<nav style="text-align:center; background:#0077cc; padding:10px;">
-  <a href="index.html" style="margin: 0 15px; color:white;">Home</a>
-  <a href="gallery.html" style="margin: 0 15px; color:white;">Gallery</a>
-</nav>
-<div style="max-width: 1000px; margin:auto; padding:20px;">
+  <section class="services">
+    <h2>Our Services / خدماتنا</h2>
+    <div class="service-list">
+      <div class="service-item">Logo Designing / تصميم الشعارات</div>
+      <div class="service-item">CV & Cover Letter Creation / إنشاء السيرة الذاتية وخطاب التقديم</div>
+      <div class="service-item">Website Design / تصميم المواقع</div>
+      <div class="service-item">Document Clearance / تخليص الوثائق</div>
+      <div class="service-item">Stationery Supply / توفير الأدوات المكتبية</div>
+      <div class="service-item">Online Training & Tech Support / الدعم الفني والتدريب عبر الإنترنت</div>
+    </div>
+  </section>
 
-<button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+  <section class="contact">
+    <h2>Contact Us / اتصل بنا</h2>
+    <form action="https://formsubmit.co/izznyxsolutions@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div style="text-align:center;margin-top:30px;">
+      <a href="https://instagram.com/izznyx_solutions" target="_blank" style="font-size:20px;color:#125688;text-decoration:none;">
+        <i class="fab fa-instagram" style="font-size:24px;"></i> Follow us on Instagram
+      </a>
+    </div>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 IzzNyx Solutions | Designed by Safna M Usman</p>
+  </footer>
 
-
-<header style="background: linear-gradient(to right, #0077cc, #00bcd4); padding: 1.5rem 0; text-align: center; position: relative;">
-  <img src="IMG-20250531-WA0002.jpg" alt="IzzNyx Logo" style="height: 80px;"><br>
-  <h1 style="color: white; margin: 0;">IzzNyx Solutions</h1>
-  <nav style="position: absolute; top: 1.5rem; right: 2rem;">
-    <a href="#home" style="color: white; margin: 0 10px; text-decoration: none;">Home</a>
-    <a href="#about" style="color: white; margin: 0 10px; text-decoration: none;">About</a>
-    <a href="#services" style="color: white; margin: 0 10px; text-decoration: none;">Services</a>
-    <a href="#gallery" style="color: white; margin: 0 10px; text-decoration: none;">Gallery</a>
-    <a href="#contact" style="color: white; margin: 0 10px; text-decoration: none;">Contact</a>
-  </nav>
-</header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="insta-link">
-  <a href="https://instagram.com/izznyx_solutions" target="_blank">
-    <i class="fab fa-instagram"></i> Follow us on Instagram
-  </a>
-</div>
-
-<footer>
-  &copy; 2025 IzzNyx Solutions | Manama, Bahrain
-</footer>
-
-<a href="https://bit.ly/4jO4Qwp" class="whatsapp-btn" target="_blank">💬</a>
-
-</div>
-
-
-
-
-
-
-
-
-
-<a href="https://wa.me/97334082362" class="whatsapp-button" title="Chat on WhatsApp">💬</a>
-
-
-
-
-
-
-
-
-<!-- Tawk.to Chatbot Integration -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/65b7b8c90ff6374032c1b321/1hlj0h22d';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-
-
-<section id="home" style="padding: 2rem; background: #e3f2fd;">
-  <h2>Welcome to IzzNyx Solutions</h2>
-  <p>We offer a powerful range of digital services tailored to modern businesses and individuals:</p>
-  <ul>
-    <li>🎨 Logo Design & Branding</li>
-    <li>🌐 Website Development</li>
-    <li>📄 CV & Cover Letter Writing</li>
-    <li>👩‍💻 Online Tech Training</li>
-    <li>🛠️ Custom Coding & Tech Support</li>
-  </ul>
-  <p>📍 Based in Bahrain, proudly serving clients worldwide.<br>🚀 Let us bring your ideas to life!</p>
-</section>
-
-<section id="about" style="padding: 2rem; background: #fce4ec;">
-  <h2>About IzzNyx Solutions</h2>
-  <p>Founded by Safna M Usman, IzzNyx Solutions is your go-to destination for smart, creative, and affordable digital services. We are passionate about helping individuals and businesses grow with the right tools, guidance, and visuals.</p>
-  <ul>
-    <li>🎨 Logo Design & Branding</li>
-    <li>🌐 Website Development</li>
-    <li>📝 CV & Cover Letter Creation</li>
-    <li>💻 Online Tech Training</li>
-    <li>🔧 Custom Coding & Technical Support</li>
-  </ul>
-</section>
-
-<section id="services" style="padding: 2rem; background: #fff3e0;">
-  <h2>Our Services</h2>
-  <ul>
-    <li>SQL, PL/SQL, Python, Data Analysis with Python</li>
-    <li>Oracle Database Administration</li>
-    <li>C, C++, Java, HTML, JavaScript, PHP</li>
-    <li>WordPress Website Design</li>
-    <li>Excel, Canva, Digital Marketing</li>
-    <li>Project Support for Students & Professionals</li>
-  </ul>
-  <h3>📚 Book a Free Trial Class</h3>
-  <form action="https://formsubmit.co/izznyxsolutions@gmail.com" method="POST" style="max-width: 500px;">
-    <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:10px;"><br><br>
-    <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:10px;"><br><br>
-    <input type="text" name="course" placeholder="Interested Course" required style="width:100%; padding:10px;"><br><br>
-    <input type="submit" value="Submit" style="padding:10px 20px;">
-  </form>
-</section>
-
-<section id="gallery" style="padding: 2rem; background: #f1f8e9;">
-  <h2>Gallery</h2>
-  <p>Visit our <a href="gallery.html">Gallery Page</a> to explore past works and sample designs.</p>
-</section>
-
-<section id="contact" style="padding: 2rem; background: #ede7f6;">
-  <h2>Contact Us</h2>
-  <p>Email: izznyxsolutions@gmail.com<br>Instagram: @izznyx_solutions<br>Phone: +973 34082362</p>
-</section>
+  <a href="https://wa.me/97334082362" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:10px 15px;border-radius:50%;font-size:24px;text-decoration:none;box-shadow:0 0 10px #999;">💬</a>
 </body>
 </html>
