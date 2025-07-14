@@ -108,16 +108,24 @@
       text-align: center;
       padding: 1rem;
     }
+  
+
   @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .logo-left {
+    margin-left: 0;            /* Reset any negative margin */
+    margin-bottom: 1rem;       /* Add spacing below logo */
+    max-width: 120px;          /* Slightly reduce size for smaller screens */
   }
 
   .header-text {
     padding-left: 0;
-    padding-top: 1rem;
+    text-align: center;
   }
 
   .header-text h1 {
@@ -128,6 +136,7 @@
     font-size: 1rem;
   }
 }
+
     
   </style>
 </head>
