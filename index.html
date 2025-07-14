@@ -15,19 +15,42 @@
     }
       header {
   background-image: url("background-realistic-abstract-technology-particle_23-2148431735.avif");
-  background-size: cover;              /* Cover entire area */
-  background-repeat: no-repeat;        /* Prevent repeating */
-  background-position: center;         /* Center the image */
-  background-attachment: fixed;        /* Optional: adds a nice effect */
-  color: #ffffff;                      /* Make text white for contrast */
-  padding: 2rem 1rem;
-  text-align: center;
-    }
-    header img {
-      height: 200px;
-      display: block;
-      margin: 0 auto 10px;
-    }
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 3rem 2rem;
+  color: #ffffff;
+}
+    .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.logo-left {
+  max-width: 150px;
+  height: auto;
+}
+    .header-text {
+  text-align: left;
+  flex: 1;
+  padding-left: 2rem;
+}
+
+.header-text h1 {
+  font-size: 3rem;
+  margin: 0 0 10px;
+}
+
+.header-text p {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+  
     section {
       padding: 2rem;
     }
@@ -75,20 +98,38 @@
       text-align: center;
       padding: 1rem;
     }
-    .logo {
-  max-width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
+  @media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-text {
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+
+  .header-text h1 {
+    font-size: 2rem;
+  }
+
+  .header-text p {
+    font-size: 1rem;
+  }
 }
     
   </style>
 </head>
 <body>
   <header>
-  <img src="IMG-20250531-WA0002.jpg" alt="IzzNyx Logo" class="logo" />
-  <h1>IzzNyx Solutions</h1>
-  <p>Training | Design | Coding | Tech Support</p>
+  <div class="header-container">
+    <img src="IMG-20250531-WA0002.jpg" alt="IzzNyx Logo" class="logo-left" />
+    <div class="header-text">
+      <h1>IzzNyx Solutions</h1>
+      <p>Training | Design | Coding | Tech Support</p>
+    </div>
+  </div>
 </header>
 
   <section class="about">
